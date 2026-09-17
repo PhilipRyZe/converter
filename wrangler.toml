@@ -1,0 +1,14 @@
+name = "imgswap"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+main = "src/index.js"
+
+# Statische Dateien (Frontend) aus dem public-Ordner.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Bewusst KEIN R2, KEIN D1: Bilder werden nur im Arbeitsspeicher
+# konvertiert und direkt zurückgegeben, nichts wird gespeichert.
+# Dadurch bleibt das Projekt komplett im kostenlosen Cloudflare-Tarif,
+# ohne dass irgendwo eine Zahlungsmethode hinterlegt werden muss.
