@@ -55,9 +55,15 @@ function selectFile(file) {
   setMsg("");
 }
 
-formatSelect.addEventListener("change", () => {
-  qualityRow.hidden = formatSelect.value === "png";
-});
+formatSelect.addEventListener("change", updateQualityVisibility);
+updateQualityVisibility();
+
+function updateQualityVisibility() {
+  // Photon unterstützt eine einstellbare Qualität nur beim JPEG-Export.
+  // Bei PNG (verlustfrei) und WebP (feste Kompression in dieser
+  // Bibliothek) hätte der Regler keinerlei Effekt.
+  qualityRow.hidden = formatSelect.value !== "jpeg";
+}
 
 qualityRange.addEventListener("input", () => {
   qualityValue.textContent = qualityRange.value;
