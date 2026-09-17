@@ -28,7 +28,7 @@ body {
 }
 
 .wordmark {
-  font-family: "Huninn", sans-serif;
+  font-family: "Fraunces", serif;
   font-weight: 600;
   font-size: 32px;
   margin: 0;
@@ -89,6 +89,9 @@ main {
   display: block;
   margin: 0 auto;
 }
+.preview-img[hidden] {
+  display: none;
+}
 
 .options {
   margin-top: 22px;
@@ -96,11 +99,17 @@ main {
   flex-direction: column;
   gap: 14px;
 }
+.options[hidden] {
+  display: none;
+}
 
 .option-row {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+.option-row[hidden] {
+  display: none;
 }
 
 .option-row label {
